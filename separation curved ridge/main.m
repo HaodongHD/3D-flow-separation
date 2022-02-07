@@ -490,18 +490,33 @@ for i = 1:num_parallel_surface
     
     % get the positions of the contour
     ss = getcontourlines(cc);
-    x_D = ss(2).x;
-    y_D = ss(2).y;
+    % choose which line to consider
+    ss_arr = zeros(length(ss),1);
+    condition_2_cell = cell(length(ss),1);
     
-    % round to get the logical array
-    x_D_round = round(x_D,2);
-    y_D_round = round(y_D,2);
-    x1_0_round = round(x1_0(:,:,i),2);
-    x2_0_round = round(x2_0(:,:,i),2);
+    for idx = 1:length(ss)
+        
+        x_D = ss(idx).x;
+        y_D = ss(idx).y;
+        
+        % round to get the logical array
+        x_D_round = round(x_D,2);
+        y_D_round = round(y_D,2);
+        x1_0_round = round(x1_0(:,:,i),2);
+        x2_0_round = round(x2_0(:,:,i),2);
+        
+        [logical_xy_arr,~] = ismember([x1_0_round(:),x2_0_round(:)],[x_D_round', y_D_round'],'rows');
+        
+        condition_2_temp = reshape(logical_xy_arr,size(x1_0_round));
+        
+        ss_arr(idx) = mean(large_eig(condition_2_temp));
+        
+        condition_2_cell{idx} = condition_2_temp;
+        
+    end
     
-    [logical_xy_arr,~] = ismember([x1_0_round(:),x2_0_round(:)],[x_D_round', y_D_round'],'rows');
-    
-    condition_2 = reshape(logical_xy_arr,size(x1_0_round));
+    [~,choose_idx] = max(ss_arr);
+    condition_2 = condition_2_cell{choose_idx};
     
     % second order directional derivative
     D2_zeta = k2_uu.*eig_vec_large_sigmaU.^2 + k2_vv.*eig_vec_large_sigmaV.^2 ...
