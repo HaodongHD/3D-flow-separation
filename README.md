@@ -4,7 +4,7 @@ This repository accompanies the paper:
 
 > **S. Santhosh, H. Qin, B. F. Klose, G. B. Jacobs, J. Vétel (2023).** *Spike formation theory in three-dimensional flow separation.* **Journal of Fluid Mechanics**, Cambridge University Press, published online 22 Aug 2023. [https://doi.org/10.1017/jfm.2023.559](https://doi.org/10.1017/jfm.2023.559)
 
-It provides MATLAB code to reproduce key geometric computations used in the theory: construction of parallel material surfaces, evaluation of the flow map and its first/second derivatives, Weingarten map, principal curvatures (($\lambda_1 \le \lambda_2$)), Gaussian curvature, and the extraction of spike/separation structures from gradients of the largest principal curvature (\lambda_2).
+It provides MATLAB code to reproduce key geometric computations used in the theory: construction of parallel material surfaces, evaluation of the flow map and its first/second derivatives, Weingarten map, principal curvatures ($\lambda_1 \le \lambda_2$), Gaussian curvature, and the extraction of spike/separation structures from gradients of the largest principal curvature (\lambda_2).
 
 > **Note:** Simulation data and certain helper routines may be available upon request to the authors (per journal policy). This repository focuses on the core geometric workflow and demo scripts.
 
