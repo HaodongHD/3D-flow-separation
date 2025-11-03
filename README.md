@@ -94,12 +94,12 @@ It provides MATLAB code to reproduce key geometric computations used in the theo
 ## 🔬 Methods Summary
 
 * **Tangent push-forwards:**
-  [ F_u = (\nabla F) ; \sigma_u, \quad F_v = (\nabla F) ; \sigma_v. ]
-* **First fundamental form:** (E = F_u\cdot F_u,\ F = F_u\cdot F_v,\ G = F_v\cdot F_v), with area factor (J = \sqrt{EG-F^2}.)
-* **Unit normal:** (\mathbf{N} = (F_u \times F_v)/J).
-* **Second fundamental form:** (L = \mathbf{N}\cdot F_{uu},\ M = \mathbf{N}\cdot F_{uv},\ N = \mathbf{N}\cdot F_{vv}.)
-* **Weingarten map:** (\mathbf{W} = \mathbf{I}^{-1}\mathbf{II}), with entries W11, W12, W21, W22 in the ((u,v)) basis.
-* **Principal curvatures:** eigenvalues of **W** ((\lambda_1 \le \lambda_2)); **Gaussian curvature** (K = \lambda_1\lambda_2).
+  [ $F_u = (\nabla F) ; \sigma_u, \quad F_v = (\nabla F) ; \sigma_v.$ ]
+* **First fundamental form:** ($E = F_u\cdot F_u,\ F = F_u\cdot F_v,\ G = F_v\cdot F_v$), with area factor ($J = \sqrt{EG-F^2}.$)
+* **Unit normal:** $(\mathbf{N} = (F_u \times F_v)/J)$.
+* **Second fundamental form:** ($L = \mathbf{N}\cdot F_{uu},\ M = \mathbf{N}\cdot F_{uv},\ N = \mathbf{N}\cdot F_{vv}.$)
+* **Weingarten map:** ($\mathbf{W} = \mathbf{I}^{-1}\mathbf{II}$), with entries W11, W12, W21, W22 in the ((u,v)) basis.
+* **Principal curvatures:** eigenvalues of **W** ($\lambda_1 \le \lambda_2$); **Gaussian curvature** ($K = \lambda_1\lambda_2$).
 * **Separation/spike curves:** obtained as streamlines of **∇λ2** on the initial sheets, integrated via `ode45` and mapped through the flow.
 
 ---
